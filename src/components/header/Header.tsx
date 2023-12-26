@@ -1,6 +1,6 @@
 import "./Header.css";
 import reactImg from "../../assets/react-core-concepts.png";
-import React from "react";
+import { FC } from "react";
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -8,7 +8,7 @@ function getRandomInt(max: number): number {
     return Math.floor(Math.random() * (max + 1));
 }
 
-const Header: React.FC = () => {
+const Header: FC = () => {
     const maxIndex = reactDescriptions.length - 1;
     const description = reactDescriptions[getRandomInt(maxIndex)];
     return (

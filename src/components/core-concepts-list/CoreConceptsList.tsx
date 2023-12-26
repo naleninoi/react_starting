@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 import { CORE_CONCEPTS } from "../../data";
 import CoreConcept from "../core-concept/CoreConcept";
 
-const CoreConceptsList: React.FC = () => {
+const CoreConceptsList: FC = () => {
     return (
         <section id="core-concepts">
             <h2>Core Concepts</h2>

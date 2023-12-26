@@ -1,5 +1,5 @@
 import "./CoreConcept.css";
-import React from "react";
+import { FC } from "react";
 
 interface CoreConceptProps {
     title: string,
@@ -7,7 +7,7 @@ interface CoreConceptProps {
     image: any
 }
 
-const CoreConcept: React.FC<CoreConceptProps> = (props) => {
+const CoreConcept: FC<CoreConceptProps> = (props) => {
     return (
         <li>
             <img src={props.image} alt={props.title}/>

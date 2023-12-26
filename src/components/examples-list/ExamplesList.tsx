@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import { EXAMPLES } from "../../data";
 import TabButton from "../tab-button/TabButton";
 import "./ExamplesList.css";
+import Section from "../section/Section";
+import Tabs from "../tabs/Tabs";
 
-const ExamplesList: React.FC = () => {
+const ExamplesList: FC = () => {
     const [selectedTopic, setSelectedTopic] = useState<'components' | 'jsx' | 'props' | 'state' | null>(null);
 
     function handleSelect(selectedButton: 'components' | 'jsx' | 'props' | 'state') {
@@ -11,9 +13,9 @@ const ExamplesList: React.FC = () => {
     }
 
     return (
-        <section id="examples">
-            <h2>Examples</h2>
-            <menu>
+        <Section id="examples" title="Examples">
+            <Tabs buttons={
+                <>
                 <TabButton
                     onSelect={() => handleSelect('components')}
                     isSelected={selectedTopic === 'components'}>
@@ -34,20 +36,22 @@ const ExamplesList: React.FC = () => {
                     isSelected={selectedTopic === 'state'}>
                     State
                 </TabButton>
-            </menu>
-            {!selectedTopic &&
-                <p>Please select a topic.</p>
-            }
-            {selectedTopic &&
-                <div id="tab-content">
-                    <h3>{EXAMPLES[selectedTopic].title}</h3>
-                    <p>{EXAMPLES[selectedTopic].description}</p>
-                    <pre>
+                </>
+            }>
+                {!selectedTopic &&
+                    <p>Please select a topic.</p>
+                }
+                {selectedTopic &&
+                    <div id="tab-content">
+                        <h3>{EXAMPLES[selectedTopic].title}</h3>
+                        <p>{EXAMPLES[selectedTopic].description}</p>
+                        <pre>
                         <code>{EXAMPLES[selectedTopic].code}</code>
                     </pre>
-                </div>
-            }
-        </section>
+                    </div>
+                }
+            </Tabs>
+        </Section>
     );
 }
 

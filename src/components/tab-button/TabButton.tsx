@@ -1,12 +1,12 @@
-import React from "react";
+import { FC, ReactNode } from "react";
 
 interface TabButtonProps {
     onSelect: () => void,
     isSelected: boolean,
-    children: React.ReactNode
+    children: ReactNode
 }
 
-const TabButton: React.FC<TabButtonProps> = (props) => {
+const TabButton: FC<TabButtonProps> = (props) => {
     return (
         <li>
             <button className={props.isSelected ? 'active' : ''} onClick={props.onSelect}>
