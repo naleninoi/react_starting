@@ -2,15 +2,14 @@ import { FC, ReactNode } from "react";
 
 type TabsProps = {
     buttons: ReactNode;
+    ButtonsContainer: any;
     children: ReactNode
 }
 
-const Tabs: FC<TabsProps> = ({buttons, children}) => {
+const Tabs: FC<TabsProps> = ({buttons, ButtonsContainer, children}) => {
     return (
         <>
-        <menu>
-            {buttons}
-        </menu>
+        <ButtonsContainer>{buttons}</ButtonsContainer>
         {children}
         </>
     );

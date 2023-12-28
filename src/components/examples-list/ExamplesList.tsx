@@ -14,7 +14,9 @@ const ExamplesList: FC = () => {
 
     return (
         <Section id="examples" title="Examples">
-            <Tabs buttons={
+            <Tabs
+                ButtonsContainer="menu"
+                buttons={
                 <>
                 <TabButton
                     onSelect={() => handleSelect('components')}
